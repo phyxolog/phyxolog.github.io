@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YURII ZHYVAHA - Senior Software Engineer</title>
+  <title>YURII ZHYVAHA CV</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,9 +38,7 @@
     }
 
     @media print {
-      .page {
-        width: 100vw;
-        height: 100vh;
+      .after-page-break {
         page-break-after: always;
       }
 
@@ -48,15 +46,20 @@
       header {
         position: relative;
         left: calc(var(--bs-gutter-x) * .5 * -1);
-        width: calc(100% + (var(--bs-gutter-x) * .5));
+        width: 100vw;
+      }
+
+      .fixed-print-height {
+        /* hack: fill page with bg color */
+        height: calc(65vh + 20px);
       }
     }
 
   </style>
 </head>
 
-<body class="text-white bg-dark container">
-  <section class="page">
+<body class="text-white bg-dark">
+  <main class="container">
     <header class="p-4">
       <div>
         <h1>YURII ZHYVAHA</h1>
@@ -91,6 +94,14 @@
             <span>
               <a href="https://github.com/phyxolog" target="_blank">GitHub</a> / <a
                 href="https://www.linkedin.com/in/phyxolog" target="_blank">LinkedIn</a>
+            </span>
+          </li>
+
+          <li class="list-group-item d-inline-block d-print-none">
+            <span class="badge bg-primary">Download CV</span>
+
+            <span>
+              <a href="https://github.com/phyxolog/phyxolog.github.io/raw/master/CV.pdf" target="_blank">as PDF</a>
             </span>
           </li>
         </ul>
@@ -129,7 +140,7 @@
 
     <hr>
 
-    <section>
+    <section class="after-page-break">
       <h3>Achievements</h3>
 
       <ul>
@@ -141,9 +152,7 @@
         <li>Created a browser extension for Gmail (using React.js)</li>
       </ul>
     </section>
-  </section>
 
-  <section class="page">
     <hr>
 
     <section>
@@ -205,7 +214,7 @@
           </p>
         </li>
 
-        <li>
+        <li class="after-page-break">
           <p>Software Engineer - <span class="badge bg-warning text-dark">Prof-it LLC</span> <span
               class="badge bg-info text-dark">Full-time</span> <span class="badge bg-primary">Outsource</span> (Aug 2018
             - Oct 2018)</p>
@@ -217,15 +226,9 @@
           </ul>
           </p>
         </li>
-      </ul>
-    </section>
-  </section>
 
-  <section class="page">
-    <hr class="d-none d-print-block">
+        <hr class="d-none d-print-block">
 
-    <section>
-      <ul>
         <li>
           <p>Software Engineer - <span class="badge bg-warning text-dark">Artmart Studio</span> <span
               class="badge bg-info text-dark">Full-time</span> <span class="badge bg-primary">Product</span> (Aug 2016 -
@@ -252,26 +255,26 @@
           </p>
         </li>
       </ul>
+
+      <hr>
+
+      <section class="fixed-print-height">
+        <h3>Education</h3>
+
+        <ul>
+          <li>
+            <div>State University of Infrastructure and Technologies (2019 - 2020)</div>
+            <div>Master's degree, Computer Software Engineering</div>
+          </li>
+
+          <li>
+            <div>State University of Infrastructure and Technologies (2017 - 2019)</div>
+            <div>Bachelor's degree, Computer Software Engineering</div>
+          </li>
+        </ul>
+      </section>
     </section>
-
-    <hr>
-
-    <section>
-      <h3>Education</h3>
-
-      <ul>
-        <li>
-          <div>State University of Infrastructure and Technologies (2019 - 2020)</div>
-          <div>Master's degree, Computer Software Engineering</div>
-        </li>
-
-        <li>
-          <div>State University of Infrastructure and Technologies (2017 - 2019)</div>
-          <div>Bachelor's degree, Computer Software Engineering</div>
-        </li>
-      </ul>
-    </section>
-  </section>
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
