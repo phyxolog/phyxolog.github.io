@@ -18,12 +18,21 @@ export const getStaticPaths = (async ({ paginate }) => {
 const { page } = Astro.props;
 ---
 
-<Layout title={`Posts | ${SITE.title}`}>
+<Layout title={`posts | ${SITE.title}`}>
   <Header />
-  <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
-    <ul>
-      {page.data.map(data => <Card {...data} />)}
-    </ul>
+
+  <Main pageTitle="">
+    {
+      page.data.length === 0 ? (
+        <div class="min-h-[200px] flex items-center justify-center text-lg italic">
+          no posts yet...
+        </div>
+      ) : (
+        <ul>
+          {page.data.map(data => <Card {...data} />)}
+        </ul>
+      )
+    }
   </Main>
 
   <Pagination {page} />
