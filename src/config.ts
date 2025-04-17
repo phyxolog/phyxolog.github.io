@@ -1,5 +1,5 @@
 export const SITE = {
-  website: "https://phyxolog.github.io/", // replace this with your deployed domain
+  website: "https://phyxolog.github.io", // replace this with your deployed domain
   author: "Yurii Zhyvaha",
   profile: null,
   desc: "software engineer / reverse exorcist / runtime surgeon / dark arts",
@@ -13,7 +13,7 @@ export const SITE = {
   showBackButton: true, // show back button in post detail
   editPost: {
     enabled: true,
-    text: "Suggest Changes",
+    text: "suggest changes",
     url: "https://github.com/phyxolog/phyxolog.github.io/edit/main/",
   },
   dynamicOgImage: true,
